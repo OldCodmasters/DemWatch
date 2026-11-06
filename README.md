@@ -10,7 +10,7 @@ Interactive tracker for **2026 midterm Democratic winners** and **Democrats alre
 ├── public/              # portraits, map geometry
 ├── docs/                # preferences + coverage notes
 ├── .cursor/rules/       # Cursor project rules
-├── bots/                # reserved — bots arrive from another worker
+├── bots/                # Agent SDK bots (X watch, news ingest, nightly merge)
 ├── AGENTS.md
 └── package.json
 ```
@@ -28,4 +28,12 @@ See [`AGENTS.md`](./AGENTS.md), [`.cursor/rules/demwatch.mdc`](./.cursor/rules/d
 
 ## Bots
 
-`bots/` is intentionally empty (placeholder README only). Bot packages will be added by a separate worker.
+Agent SDK projects live under [`bots/`](./bots/):
+
+| Path | Role |
+|------|------|
+| `bots/demwatch-x-watch` | X/Twitter scan → sourced controversy items |
+| `bots/demwatch-news-ingest` | News search/check → sourced calendar items |
+| `bots/demwatch-nightly` | 11 PM America/Chicago merge → `calendars.json` + report |
+
+Details: [`bots/README.md`](./bots/README.md).
