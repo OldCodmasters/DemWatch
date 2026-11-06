@@ -1,0 +1,41 @@
+---
+description: DemWatch project rules from Project preferences — apply to all site and future bots work
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+# DemWatch rules
+
+Source of truth: `docs/preferences.md` (Project preferences).
+
+## Home / map
+- No large DemWatch hero/banner on the home page.
+- US map is the first content on the index.
+- Newly elected ↔ Already in office control sits close to the map.
+- Cohort toggle animation should feel smooth and fancy (not a bare cut).
+
+## Roster coverage
+- **Already in office** includes the full voting House Democratic Caucus, not a leadership subset.
+- Document coverage; exclude non-voting delegates unless explicitly requested.
+
+## Claims & Pursuing
+- Every factual claim must be sourced (links on the claim).
+- **Pursuing** = attributed hard goals (controversial statements, tweets/X, bills they said they want to do).
+- Never use generic “continues serving” or party-framing filler.
+- Leave Pursuing empty (“None yet”) if no attributed hard goal exists — do not invent.
+
+## Controversy calendar
+- Every official page has a dated controversy calendar (speeches, tweets/X, related news/trends).
+- Each entry: date, short description, source link(s).
+- No invented events; empty calendar OK when unsourced.
+- Calendar data lives in `src/data/calendars.json` keyed by official id.
+
+## UI copy
+- No explanatory blurbs under module titles — headings only.
+- Keep functional legends/controls.
+- Empty states stay minimal (“None yet”).
+
+## Monorepo
+- Web app at repo root (Vite + React).
+- `bots/` is reserved for a separate worker — do not invent bot code here.
